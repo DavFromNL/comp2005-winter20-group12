@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Grid
+comment0.text=\r\n\ \ a\ simple\ extension\ of\ JButton\ which\ allows\ the\ background\ colour\ to\ be\ set\ and\ switched\ back\ and\ forth\ with\ ease\r\n\ \ \r\n\ \ there\ are\ other\ ways\ of\ doing\ this,\ but\ it's\ a\ neat\ way\ to\ demonstrate\ how\ to\ create\ your\ own\ gui\ components\r\n\ \ (as\ well\ as\ how\ to\ use\ ternary\ operators)\r\n
+comment1.params=xcoord\ ycoord
+comment1.target=Grid(int,\ int)
+comment2.params=
+comment2.target=void\ highlight()
+comment3.params=
+comment3.target=void\ dehighlight()
+comment4.params=
+comment4.target=void\ makeMove()
+comment5.params=identifier
+comment5.target=void\ move(int)
+comment6.params=decider\ decider2
+comment6.target=void\ setColor(int,\ int)
+numComments=7

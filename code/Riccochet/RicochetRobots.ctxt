@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=RicochetRobots
+comment0.text=\r\nMain\ class\ which\ results\ in\ the\ start\ of\ the\ application.\r\n\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=RicochetRobots()
+comment3.params=frame\ grid\ panel\ label1\ LabelText\ fontsize
+comment3.target=void\ SetUpScreen(javax.swing.JFrame,\ java.awt.GridLayout,\ javax.swing.JPanel,\ javax.swing.JLabel,\ java.lang.String,\ int)
+numComments=4
