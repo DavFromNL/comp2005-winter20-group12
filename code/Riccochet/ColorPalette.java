@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
- 
+//Creates window that allows user to select colour palette
 
-import javax.swing.JPanel;
 import java.awt.*;
-import java.awt.Image.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.Image.*;
+import javax.swing.JPanel;
+import javax.imageio.ImageIO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
