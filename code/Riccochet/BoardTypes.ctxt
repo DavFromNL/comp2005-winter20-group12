@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=BoardTypes
-comment1.params=
-comment1.target=BoardTypes()
-comment2.params=event
-comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment3.params=event
-comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=4
