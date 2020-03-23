@@ -1,10 +1,15 @@
-//Creates window that allows user to select colour palette
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ricochet.robots;
 
-import java.awt.*;
-import javax.swing.*;
-import java.awt.Image.*;
 import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.Image.*;
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
