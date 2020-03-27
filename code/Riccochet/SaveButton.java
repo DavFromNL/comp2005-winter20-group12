@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ricochet.robots;
+ 
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +25,7 @@ public class SaveButton extends JButton implements ActionListener  {
     
     
     public void actionPerformed(ActionEvent event){
+        
     
         try
         {   
@@ -45,6 +46,10 @@ public class SaveButton extends JButton implements ActionListener  {
             writer.write(""+Board.yellowX);
             writer.newLine();
             writer.write(""+Board.yellowY);
+            writer.newLine();
+            writer.write(""+Data.GetCurrentPalette());
+            writer.newLine();
+            writer.write(""+Data.GetBoardType());
             
             writer.close();
             

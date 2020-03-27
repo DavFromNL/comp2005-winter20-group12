@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ricochet.robots;
 
-import javax.swing.JPanel;
 import java.awt.*;
-import java.awt.Image.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.Image.*;
+import javax.swing.JPanel;
+import javax.imageio.ImageIO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -60,14 +54,13 @@ public class ColorPalette extends JFrame {
         
         Default.addActionListener(new ActionListener(){
             
-            Data data = new Data();
             
             public void actionPerformed(ActionEvent event){
                 
                 if(event.getSource() == Default)
                 {
                     
-                    data.SetNormalPalette();
+                    Data.SetPalette(1);
                     JOptionPane.showMessageDialog(null,"Color Palette is Default","Saved",1);
                     
                 }
@@ -78,14 +71,13 @@ public class ColorPalette extends JFrame {
         
         GrayScale.addActionListener(new ActionListener(){
             
-            Data data = new Data();
             
             public void actionPerformed(ActionEvent event){
                 
                 if(event.getSource() == GrayScale)
                 {
                     
-                    data.SetGrayScalePalette();
+                    Data.SetPalette(2);
                     JOptionPane.showMessageDialog(null,"Color Palette is GrayScale","Saved",1);
                     
                 }
@@ -96,14 +88,13 @@ public class ColorPalette extends JFrame {
         
         BlueOrange.addActionListener(new ActionListener(){
             
-            Data data = new Data();
             
             public void actionPerformed(ActionEvent event){
                 
                 if(event.getSource() == BlueOrange)
                 {
                     
-                    data.SetBlueOrangePalette();
+                    Data.SetPalette(3);
                     JOptionPane.showMessageDialog(null,"Color Palette is blue/orange","Saved",1);
                     
                 }

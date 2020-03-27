@@ -1,10 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ricochet.robots;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 public class LoadGame 
@@ -22,6 +15,8 @@ public class LoadGame
             Board.redY = Integer.parseInt(reader.readLine());
             Board.yellowX = Integer.parseInt(reader.readLine());
             Board.yellowY = Integer.parseInt(reader.readLine());
+            Data.SetPalette(Integer.parseInt(reader.readLine()));
+            Data.SetBoardType(Integer.parseInt(reader.readLine()));
             
             reader.close();
             
