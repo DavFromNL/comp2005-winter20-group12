@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ricochet.robots;
+ 
 
 import java.awt.*;
 import java.awt.event.*;
@@ -32,7 +32,7 @@ public class Board extends JFrame implements ActionListener
     public int tempX, tempY;
     public boolean canMove = false; //determines wether a robot has been selected and a move can be made
     public int identifier=0; //identifies what color robot is selected or updated
-    
+    public int tempblueX, tempredX, tempgreenX, tempyellowX, tempblueY, tempredY, tempgreenY, tempyellowY;
     public static boolean LoadingGame = false;
     
     
@@ -123,6 +123,154 @@ public class Board extends JFrame implements ActionListener
                                 yellowY=y;
                                 yellowX=x;
                             }
+       }
+    public int checkRob(int selected, int var, int decider, int con, int decider2){
+                            //updates the position of the robot, 
+                            if(decider==1){
+                                tempredX=redX;
+                                tempblueX=blueX;
+                                tempgreenX=greenX;
+                                tempyellowX=yellowX;
+                                tempredY=redY;
+                                tempblueY=blueY;
+                                tempgreenY=greenY;
+                                tempyellowY=yellowY;
+                            }
+                            if(decider==2){
+                                tempredY=redX;
+                                tempblueY=blueX;
+                                tempgreenY=greenX;
+                                tempyellowY=yellowX;
+                                tempredX=redY;
+                                tempblueX=blueY;
+                                tempgreenX=greenY;
+                                tempyellowX=yellowY;
+                            }
+                            if(decider2==1){
+                            if(identifier == 1){
+                                if(tempblueY!=con & tempgreenY!=con & tempyellowY!= con){
+                                    return var;
+                                }
+                                else if(tempblueY==con & tempblueX>= var & tempblueX<selected){
+                                    return tempblueX+1;
+                                }
+                                else if(tempgreenY==con & tempgreenX>= var & tempgreenX<selected){
+                                    return tempgreenX+1;
+                                }
+                                else if(tempyellowY==con & tempyellowX>= var & tempyellowX<selected){
+                                    return tempyellowX+1;
+                                }
+                            }
+                            if(identifier == 2){
+                                if(tempredY!=con & tempgreenY!=con & tempyellowY!= con){
+                                    return var;
+                                }
+                                else if(tempredY==con & tempredX>= var & tempredX<selected){
+                                    return tempredX+1;
+                                }
+                                else if(tempgreenY==con & tempgreenX>= var & tempgreenX<selected){
+                                    return tempgreenX+1;
+                                }
+                                else if(tempyellowY==con & tempyellowX>= var & tempyellowX<selected){
+                                    return tempyellowX+1;
+                                }
+                            }
+                            if(identifier == 3){
+                                if(tempblueY!=con & tempredY!=con & tempyellowY!= con){
+                                    return var;
+                                }
+                                else if(tempblueY==con & tempblueX>= var & tempblueX<selected){
+                                    return tempblueX+1;
+                                }
+                                else if(tempredY==con & tempredX>= var & tempredX<selected){
+                                    return tempredX+1;
+                                }
+                                else if(tempyellowY==con & tempyellowX>= var & tempyellowX<selected){
+                                    return tempyellowX+1;
+                                }
+                            }
+                            if(identifier == 4){
+                                if(tempblueY!=con & tempgreenY!=con & tempredY!= con){
+                                    return var;
+                                }
+                                else if(tempblueY==con & tempblueX>= var & tempblueX<selected){
+                                    return tempblueX+1;
+                                }
+                                else if(tempgreenY==con & tempgreenX>= var & tempgreenX<selected){
+                                    return tempgreenX+1;
+                                }
+                                else if(tempredY==con & tempredX>= var & tempredX<selected){
+                                    return tempredX+1;
+                                }
+                            }
+                            
+                            else{
+                                return var;
+                            }
+                        }
+                         if(decider2==2){
+                            if(identifier == 1){
+                                if(tempblueY!=con & tempgreenY!=con & tempyellowY!= con){
+                                    return var;
+                                }
+                                else if(tempblueY==con & tempblueX<= var & tempblueX>selected){
+                                    return tempblueX-1;
+                                }
+                                else if(tempgreenY==con & tempgreenX<= var & tempgreenX>selected){
+                                    return tempgreenX-1;
+                                }
+                                else if(tempyellowY==con & tempyellowX<= var & tempyellowX>selected){
+                                    return tempyellowX-1;
+                                }
+                            }
+                            if(identifier == 2){
+                                if(tempredY!=con & tempgreenY!=con & tempyellowY!= con){
+                                    return var;
+                                }
+                                else if(tempredY==con & tempredX<= var & tempredX>selected){
+                                    return tempredX-1;
+                                }
+                                else if(tempgreenY==con & tempgreenX<= var & tempgreenX>selected){
+                                    return tempgreenX-1;
+                                }
+                                else if(tempyellowY==con & tempyellowX<= var & tempyellowX>selected){
+                                    return tempyellowX-1;
+                                }
+                            }
+                            if(identifier == 3){
+                                if(tempblueY!=con & tempredY!=con & tempyellowY!= con){
+                                    return var;
+                                }
+                                else if(tempblueY==con & tempblueX<= var & tempblueX>selected){
+                                    return tempblueX-1;
+                                }
+                                else if(tempredY==con & tempredX<= var & tempredX>selected){
+                                    return tempredX-1;
+                                }
+                                else if(tempyellowY==con & tempyellowX<= var & tempyellowX>selected){
+                                    return tempyellowX-1;
+                                }
+                            }
+                            if(identifier == 4){
+                                if(tempblueY!=con & tempgreenY!=con & tempredY!= con){
+                                    return var;
+                                }
+                                else if(tempblueY==con & tempblueX<= var & tempblueX>selected){
+                                    return tempblueX-1;
+                                }
+                                else if(tempgreenY==con & tempgreenX<= var & tempgreenX>selected){
+                                    return tempgreenX-1;
+                                }
+                                else if(tempredY==con & tempredX<= var & tempredX>selected){
+                                    return tempredX-1;
+                                }
+                            }
+                            
+                            else{
+                                return var;
+                            }
+                        }
+                            return var;
        }
     
     private void SetUpSaveButton(){
@@ -259,187 +407,187 @@ public class Board extends JFrame implements ActionListener
                             if(column==0){
                                 if(selectedX >11){
                                 
-                                gridSquares[selectedY][12].move(identifier);
-                                changeRob(12, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 12, 1, 0,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 12, 1, 0,1), selectedY);
                                 }
                                 else if(selectedX <12 & selectedX >1){
-                                gridSquares[selectedY][2].move(identifier);
-                                changeRob(2, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 2, 1, 0,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 2, 1, 0,1), selectedY);
                                 }
                                 else if(selectedX <2 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 0,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 12, 1, 0,1), selectedY);
                                 }
                                 
                             }
                             else if(column==1){
                                 if(selectedX >12){
-                                gridSquares[selectedY][13].move(identifier);
-                                changeRob(13, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 13, 1, 1, 1)].move(identifier);
+                                changeRob(checkRob(selectedX, 13, 1, 1, 1), selectedY);
                                 }
                                 if(selectedX <13 & selectedX >3){
-                                gridSquares[selectedY][4].move(identifier);
-                                changeRob(4, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 4, 1, 1,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 4, 1, 1,1), selectedY);
                                 }
                                 if(selectedX <4 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 1,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 1,1), selectedY);
                                 }
                             }
                             else if(column==2){
                                 if(selectedX >9){
-                                gridSquares[selectedY][10].move(identifier);
-                                changeRob(10, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 10, 1, 2,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 10, 1, 2,1), selectedY);
                                 }
                                 if(selectedX <10 & selectedX >1){
-                                gridSquares[selectedY][2].move(identifier);
-                                changeRob(2, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 2, 1, 2,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 2, 1, 2,1), selectedY);
                                 }
                                 if(selectedX <2 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 2,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 2,1), selectedY);
                                 }
                             }
                             else if(column==3){
                                 if(selectedX>6){
-                                gridSquares[selectedY][7].move(identifier);
-                                changeRob(7, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 7, 1, 3,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 7, 1, 3,1), selectedY);
                                 }
                                 if(selectedX <7 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 3,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 3,1), selectedY);
                                 }
                             }
                             else if(column==4){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 4,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 4,1), selectedY);
                                }
                             else if(column==5){
                                 if(selectedX >13){
-                                gridSquares[selectedY][14].move(identifier);
-                                changeRob(14, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 14, 1, 5,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 14, 1, 5,1), selectedY);
                                 }
                                 if(selectedX <14 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 5,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 5,1), selectedY);
                                 }
                             }
                             else if(column==6){
                                 if(selectedX >11){
-                                gridSquares[selectedY][12].move(identifier);
-                                changeRob(12, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 12, 1, 6,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 12, 1, 6,1), selectedY);
                                 }
                                 if(selectedX <12 & selectedX >2){
-                                gridSquares[selectedY][3].move(identifier);
-                                changeRob(3, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 3, 1, 6,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 3, 1, 6,1), selectedY);
                                 }
                                 if(selectedX <3 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 6,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 6,1), selectedY);
                                 }
                             }
                             else if(column==7){
                                 if(selectedX >8){
-                                gridSquares[selectedY][9].move(identifier);
-                                changeRob(9, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 9, 1, 7,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 9, 1, 7,1), selectedY);
                                 }
                                 if(selectedX <7 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 7,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 7,1), selectedY);
                                 }
                             }
                             else if(column==8){
                                 if(selectedX >8){
-                                gridSquares[selectedY][9].move(identifier);
-                                changeRob(9, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 9, 1, 8,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 9, 1, 8,1), selectedY);
                                 }
                                 if(selectedX==6){
-                                gridSquares[selectedY][6].move(identifier);
-                                changeRob(6, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 6, 1, 8,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 6, 1, 8,1), selectedY);
                                 }
                                 if(selectedX <6 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, 8,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, 8,1), selectedY);
                                 }
                             }
                              else if(column==9){
                                 if(selectedX>14){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,1), selectedY);
                                 }
                                 if(selectedX<15 & selectedX>1){
-                                gridSquares[selectedY][2].move(identifier);
-                                changeRob(2, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 2, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 2, 1, column,1), selectedY);
                                 }
                                 if(selectedX<2 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, column,1), selectedY);
                                 }
                             }
                              else if(column==10){
                                 if(selectedX>8){
-                                gridSquares[selectedY][9].move(identifier);
-                                changeRob(9, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 9, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 9, 1, column,1), selectedY);
                                 }
                                 if(selectedX<9 & selectedX>3){
-                                gridSquares[selectedY][4].move(identifier);
-                                changeRob(4, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 4, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 4, 1, column,1), selectedY);
                                 }
                                 if(selectedX<4 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, column,1), selectedY);
                                 }
                             }
                              else if(column==11){
                                 if(selectedX>12){
-                                gridSquares[selectedY][13].move(identifier);
-                                changeRob(13, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 13, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 13, 1, column,1), selectedY);
                                 }
                                 if(selectedX<13 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, column,1), selectedY);
                                 }
                             }
                             else if(column==12){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, column,1), selectedY);
                                }
                              else if(column==13){
                                 if(selectedX>9){
-                                gridSquares[selectedY][10].move(identifier);
-                                changeRob(10, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 10, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 10, 1, column,1), selectedY);
                                 }
                                 if(selectedX<10 & selectedX>5){
-                                gridSquares[selectedY][6].move(identifier);
-                                changeRob(6, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 6, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 6, 1, column,1), selectedY);
                                 }
                                 if(selectedX<6 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, column,1), selectedY);
                                 }
                             }
                              else if(column==14){
                                 if(selectedX>2){
-                                gridSquares[selectedY][3].move(identifier);
-                                changeRob(3, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 3, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 3, 1, column,1), selectedY);
                                 }
                                 if(selectedX<3 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, column,1), selectedY);
                                 }
                             }
                              else if(column==15){
                                 if(selectedX>11){
-                                gridSquares[selectedY][12].move(identifier);
-                                changeRob(12, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 12, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 12, 1, column,1), selectedY);
                                 }
                                 if(selectedX<12 & selectedX>6){
-                                gridSquares[selectedY][7].move(identifier);
-                                changeRob(7, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 7, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 7, 1, column,1), selectedY);
                                 }
                                 if(selectedX<7 ){
-                                gridSquares[selectedY][0].move(identifier);
-                                changeRob(0, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 0, 1, column,1)].move(identifier);
+                                changeRob(checkRob(selectedX, 0, 1, column,1), selectedY);
                                 }
                             }
                             if(identifier==1){
@@ -516,186 +664,186 @@ public class Board extends JFrame implements ActionListener
                             gridSquares[selectedY][selectedX].makeMove();
                             if(column==0){
                                 if(selectedX >11){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 else if(selectedX <12 & selectedX >1){
-                                gridSquares[selectedY][11].move(identifier);
-                                changeRob(11, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 11, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 11, 1, column,2), selectedY);
                                 }
                                 else if(selectedX <2 ){
-                                gridSquares[selectedY][1].move(identifier);
-                                changeRob(1, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 1, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 1, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==1){
                                 if(selectedX >12){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX <13 & selectedX >3){
-                                gridSquares[selectedY][12].move(identifier);
-                                changeRob(12, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 13, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 13, 1, column,2), selectedY);
                                 }
                                 if(selectedX <4 ){
-                                gridSquares[selectedY][3].move(identifier);
-                                changeRob(3, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 3, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 3, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==2){
                                 if(selectedX >9){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX <10 & selectedX >1){
-                                gridSquares[selectedY][9].move(identifier);
-                                changeRob(9, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 9, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 9, 1, column,2), selectedY);
                                 }
                                 if(selectedX <2 ){
-                                gridSquares[selectedY][1].move(identifier);
-                                changeRob(1, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 1, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 1, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==3){
                                 if(selectedX>6){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX <7 ){
-                                gridSquares[selectedY][6].move(identifier);
-                                changeRob(6, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX,6, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 6, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==4){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                }
                             else if(column==5){
                                 if(selectedX >13){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX <14 ){
-                                gridSquares[selectedY][13].move(identifier);
-                                changeRob(13, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 13, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 13, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==6){
                                 if(selectedX >11){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX <12 & selectedX >2){
-                                gridSquares[selectedY][11].move(identifier);
-                                changeRob(11, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 11, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 11, 1, column,2), selectedY);
                                 }
                                 if(selectedX <3 ){
-                                gridSquares[selectedY][2].move(identifier);
-                                changeRob(2, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 2, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 2, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==7){
                                 if(selectedX >8){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX <7 ){
-                                gridSquares[selectedY][6].move(identifier);
-                                changeRob(6, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 6, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 6, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==8){
                                 if(selectedX >8){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX==6){
-                                gridSquares[selectedY][6].move(identifier);
-                                changeRob(6, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 6, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 6, 1, column,2), selectedY);
                                 }
                                 if(selectedX <6 ){
-                                gridSquares[selectedY][5].move(identifier);
-                                changeRob(5, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 5, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 5, 1, column,2), selectedY);
                                 }
                             }
                              else if(column==9){
                                 if(selectedX>14){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX<15 & selectedX>1){
-                                gridSquares[selectedY][14].move(identifier);
+                                gridSquares[selectedY][checkRob(selectedX, 14, 1, column,2)].move(identifier);
                                 changeRob(14, selectedY);
                                 }
                                 if(selectedX<2 ){
-                                gridSquares[selectedY][1].move(identifier);
-                                changeRob(1, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 1, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 1, 1, column,2), selectedY);
                                 }
                             }
                              else if(column==10){
                                 if(selectedX>8){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX<9 & selectedX>3){
-                                gridSquares[selectedY][8].move(identifier);
-                                changeRob(8, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 8, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 8, 1, column,2), selectedY);
                                 }
                                 if(selectedX<4 ){
-                                gridSquares[selectedY][3].move(identifier);
-                                changeRob(3, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 3, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 3, 1, column,2), selectedY);
                                 }
                             }
                              else if(column==11){
                                 if(selectedX>12){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX<13 ){
-                                gridSquares[selectedY][12].move(identifier);
-                                changeRob(12, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 12, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 12, 1, column,2), selectedY);
                                 }
                             }
                             else if(column==12){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                }
                              else if(column==13){
                                 if(selectedX>9){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX<10 & selectedX>5){
-                                gridSquares[selectedY][9].move(identifier);
-                                changeRob(9, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 9, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 9, 1, column,2), selectedY);
                                 }
                                 if(selectedX<6 ){
-                                gridSquares[selectedY][5].move(identifier);
-                                changeRob(5, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 5, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 5, 1, column,2), selectedY);
                                 }
                             }
                              else if(column==14){
                                 if(selectedX>2){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX<3 ){
-                                gridSquares[selectedY][2].move(identifier);
-                                changeRob(2, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 2, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 2, 1, column,2), selectedY);
                                 }
                             }
                              else if(column==15){
                                 if(selectedX>11){
-                                gridSquares[selectedY][15].move(identifier);
-                                changeRob(15, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 15, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 15, 1, column,2), selectedY);
                                 }
                                 if(selectedX<12 & selectedX>6){
-                                gridSquares[selectedY][11].move(identifier);
-                                changeRob(11, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 11, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 11, 1, column,2), selectedY);
                                 }
                                 if(selectedX<7 ){
-                                gridSquares[selectedY][6].move(identifier);
-                                changeRob(6, selectedY);
+                                gridSquares[selectedY][checkRob(selectedX, 6, 1, column,2)].move(identifier);
+                                changeRob(checkRob(selectedX, 6, 1, column,2), selectedY);
                                 }
                             }
                             if(identifier==1){
@@ -773,202 +921,202 @@ public class Board extends JFrame implements ActionListener
                             gridSquares[selectedY][selectedX].makeMove();
                             if(row==0){
                                 if(selectedY>11){
-                                gridSquares[12][selectedX].move(identifier);
-                                changeRob(selectedX, 12);
+                                gridSquares[checkRob(selectedY, 12, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 12, 2, row,1));
                                 }
                                 if(selectedY<12 & selectedY>5){
-                                gridSquares[6][selectedX].move(identifier);
-                                changeRob(selectedX, 6);
+                                gridSquares[checkRob(selectedY, 6, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 6, 2, row,1));
                                 }
                                 if(selectedY<6 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             }
                             else if(row==1){
                                 if(selectedY>9){
-                                gridSquares[10][selectedX].move(identifier);
-                                changeRob(selectedX, 10);
+                                gridSquares[checkRob(selectedY, 10, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 10, 2, row,1));
                                 }
                                 if(selectedY<10 & selectedY>1){
-                                gridSquares[2][selectedX].move(identifier);
-                                changeRob(selectedX, 2);
+                                gridSquares[checkRob(selectedY, 2, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 2, 2, row,1));
                                 }
                                 if(selectedY<2 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==2){
                                 
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 
                                 }
                             else if(row==3){
                                 if(selectedY>13){
-                                gridSquares[14][selectedX].move(identifier);
-                                changeRob(selectedX, 14);
+                                gridSquares[checkRob(selectedY, 14, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 14, 2, row,1));
                                 }
                                 if(selectedY<14 & selectedY>6){
-                                gridSquares[7][selectedX].move(identifier);
-                                changeRob(selectedX, 7);
+                                gridSquares[checkRob(selectedY, 7, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 7, 2, row,1));
                                 }
                                 if(selectedY<7 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==4){
                                 if(selectedY>10){
-                                gridSquares[11][selectedX].move(identifier);
-                                changeRob(selectedX, 11);
+                                gridSquares[checkRob(selectedY,11, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 11, 2, row,1));
                                 }
                                 if(selectedY<11 & selectedY>0){
-                                gridSquares[1][selectedX].move(identifier);
-                                changeRob(selectedX, 1);
+                                gridSquares[checkRob(selectedY, 1, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 1, 2, row,1));
                                 }
                                 if(selectedY<1 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==5){
                                 if(selectedY>12){
-                                gridSquares[13][selectedX].move(identifier);
-                                changeRob(selectedX, 13);
+                                gridSquares[checkRob(selectedY, 13, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 13, 2, row,1));
                                 }
                                 if(selectedY<13 & selectedY>7){
-                                gridSquares[8][selectedX].move(identifier);
-                                changeRob(selectedX, 8);
+                                gridSquares[checkRob(selectedY, 8, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 8, 2, row,1));
                                 }
                                 if(selectedY<8 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==6){
                                 if(selectedY>3){
-                                gridSquares[4][selectedX].move(identifier);
-                                changeRob(selectedX, 4);
+                                gridSquares[checkRob(selectedY, 4, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 4, 2, row,1));
                                 }
                                 if(selectedY<4 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==7){
                                 if(selectedY>8){
-                                gridSquares[9][selectedX].move(identifier);
-                                changeRob(selectedX, 9);
+                                gridSquares[checkRob(selectedY, 9, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 9, 2, row,1));
                                 }
                                 if(selectedY<7 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==8){
                                 if(selectedY>9){
-                                gridSquares[10][selectedX].move(identifier);
-                                changeRob(selectedX, 10);
+                                gridSquares[checkRob(selectedY, 10, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 10, 2, row,1));
                                 }
                                 if(selectedY==9){
                                 gridSquares[9][selectedX].move(identifier);
                                 changeRob(selectedX, 9);
                                 }
                                 if(selectedY<7 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==9){
                                 if(selectedY>2){
-                                gridSquares[3][selectedX].move(identifier);
-                                changeRob(selectedX, 3);
+                                gridSquares[checkRob(selectedY, 3, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 3, 2, row,1));
                                 }
                                 if(selectedY<3 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==10){
                                 if(selectedY>12){
-                                gridSquares[13][selectedX].move(identifier);
-                                changeRob(selectedX, 13);
+                                gridSquares[checkRob(selectedY, 13, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 13, 2, row,1));
                                 }
                                 if(selectedY<13 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==11){
                                 if(selectedY>5){
-                                gridSquares[6][selectedX].move(identifier);
-                                changeRob(selectedX, 6);
+                                gridSquares[checkRob(selectedY, 6, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 6, 2, row,1));
                                 }
                                 if(selectedY<6 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==12){
                                 
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 
                                 }
                             else if(row==13){
                                 if(selectedY>11){
-                                gridSquares[12][selectedX].move(identifier);
-                                changeRob(selectedX, 12);
+                                gridSquares[checkRob(selectedY, 12, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 12, 2, row,1));
                                 }
                                 if(selectedY<12 & selectedY>0){
-                                gridSquares[1][selectedX].move(identifier);
-                                changeRob(selectedX, 1);
+                                gridSquares[checkRob(selectedY, 1, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 1, 2, row,1));
                                 }
                                 if(selectedY<1 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==14){
                                 if(selectedY>9){
-                                gridSquares[10][selectedX].move(identifier);
-                                changeRob(selectedX, 10);
+                                gridSquares[checkRob(selectedY, 10, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 10, 2, row,1));
                                 }
                                 if(selectedY<10 & selectedY>5){
-                                gridSquares[6][selectedX].move(identifier);
-                                changeRob(selectedX, 6);
+                                gridSquares[checkRob(selectedY, 6, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 6, 2, row,1));
                                 }
                                 if(selectedY<6 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
                             else if(row==15){
                                 if(selectedY>10){
-                                gridSquares[11][selectedX].move(identifier);
-                                changeRob(selectedX, 11);
+                                gridSquares[checkRob(selectedY, 11, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY,11, 2, row,1));
                                 }
                                 if(selectedY<11 & selectedY>3){
-                                gridSquares[4][selectedX].move(identifier);
-                                changeRob(selectedX, 4);
+                                gridSquares[checkRob(selectedY, 4, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 4, 2, row,1));
                                 }
                                 if(selectedY<4 ){
-                                gridSquares[0][selectedX].move(identifier);
-                                changeRob(selectedX, 0);
+                                gridSquares[checkRob(selectedY, 0, 2, row,1)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 0, 2, row,1));
                                 }
                             
                             }
@@ -1048,62 +1196,62 @@ public class Board extends JFrame implements ActionListener
                             gridSquares[selectedY][selectedX].makeMove();
                             if(row==0){
                                 if(selectedY>11){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<12 & selectedY>5){
-                                gridSquares[11][selectedX].move(identifier);
-                                changeRob(selectedX, 11);
+                                gridSquares[checkRob(selectedY, 11, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 11, 2, row,2));
                                 }
                                 if(selectedY<6 ){
-                                gridSquares[5][selectedX].move(identifier);
-                                changeRob(selectedX, 5);
+                                gridSquares[checkRob(selectedY, 5, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 5, 2, row,2));
                                 }
                             }
                             else if(row==1){
                                 if(selectedY>9){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<10 & selectedY>1){
-                                gridSquares[9][selectedX].move(identifier);
-                                changeRob(selectedX, 9);
+                                gridSquares[checkRob(selectedY, 9, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 9, 2, row,2));
                                 }
                                 if(selectedY<2 ){
-                                gridSquares[1][selectedX].move(identifier);
-                                changeRob(selectedX, 1);
+                                gridSquares[checkRob(selectedY, 1, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 1, 2, row,2));
                                 }
                             
                             }
                             else if(row==2){
                                 
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 
                                 }
                             else if(row==3){
                                 if(selectedY>13){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<14 & selectedY>6){
-                                gridSquares[13][selectedX].move(identifier);
-                                changeRob(selectedX, 13);
+                                gridSquares[checkRob(selectedY, 13, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 13, 2, row,2));
                                 }
                                 if(selectedY<7 ){
-                                gridSquares[6][selectedX].move(identifier);
-                                changeRob(selectedX, 6);
+                                gridSquares[checkRob(selectedY, 6, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 6, 2, row,2));
                                 }
                             
                             }
                             else if(row==4){
                                 if(selectedY>10){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<11 & selectedY>0){
-                                gridSquares[10][selectedX].move(identifier);
-                                changeRob(selectedX, 10);
+                                gridSquares[checkRob(selectedY, 10, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 10, 2, row,2));
                                 }
                                 if(selectedY<1 ){
                                 gridSquares[0][selectedX].move(identifier);
@@ -1113,105 +1261,105 @@ public class Board extends JFrame implements ActionListener
                             }
                             else if(row==5){
                                 if(selectedY>12){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<13 & selectedY>7){
-                                gridSquares[12][selectedX].move(identifier);
-                                changeRob(selectedX, 12);
+                                gridSquares[checkRob(selectedY, 12, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 12, 2, row,2));
                                 }
                                 if(selectedY<8 ){
-                                gridSquares[7][selectedX].move(identifier);
-                                changeRob(selectedX, 7);
+                                gridSquares[checkRob(selectedY, 7, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 7, 2, row,2));
                                 }
                             
                             }
                             else if(row==6){
                                 if(selectedY>3){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<4 ){
-                                gridSquares[3][selectedX].move(identifier);
-                                changeRob(selectedX, 3);
+                                gridSquares[checkRob(selectedY, 3, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 3, 2, row,2));
                                 }
                             
                             }
                             else if(row==7){
                                 if(selectedY>8){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<7 ){
-                                gridSquares[6][selectedX].move(identifier);
-                                changeRob(selectedX, 6);
+                                gridSquares[checkRob(selectedY, 6, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 6, 2, row,2));
                                 }
                             
                             }
                             else if(row==8){
                                 if(selectedY>9){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY==9){
                                 gridSquares[9][selectedX].move(identifier);
                                 changeRob(selectedX, 9);
                                 }
                                 if(selectedY<7 ){
-                                gridSquares[6][selectedX].move(identifier);
-                                changeRob(selectedX, 6);
+                                gridSquares[checkRob(selectedY, 6, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 6, 2, row,2));
                                 }
                             
                             }
                             else if(row==9){
                                 if(selectedY>2){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<3 ){
-                                gridSquares[2][selectedX].move(identifier);
-                                changeRob(selectedX, 2);
+                                gridSquares[checkRob(selectedY, 2, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 2, 2, row,2));
                                 }
                             
                             }
                             else if(row==10){
                                 if(selectedY>12){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<13 ){
-                                gridSquares[12][selectedX].move(identifier);
-                                changeRob(selectedX, 12);
+                                gridSquares[checkRob(selectedY, 12, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 12, 2, row,2));
                                 }
                             
                             }
                             else if(row==11){
                                 if(selectedY>5){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<6 ){
-                                gridSquares[5][selectedX].move(identifier);
-                                changeRob(selectedX, 5);
+                                gridSquares[checkRob(selectedY, 5, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 5, 2, row,2));
                                 }
                             
                             }
                             else if(row==12){
                                 
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 
                                 
                             
                             }
                             else if(row==13){
                                 if(selectedY>11){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<12 & selectedY>0){
-                                gridSquares[11][selectedX].move(identifier);
-                                changeRob(selectedX, 11);
+                                gridSquares[checkRob(selectedY, 11, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 11, 2, row,2));
                                 }
                                 if(selectedY<1 ){
                                 gridSquares[0][selectedX].move(identifier);
@@ -1221,31 +1369,31 @@ public class Board extends JFrame implements ActionListener
                             }
                             else if(row==14){
                                 if(selectedY>9){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<10 & selectedY>5){
-                                gridSquares[9][selectedX].move(identifier);
-                                changeRob(selectedX, 9);
+                                gridSquares[checkRob(selectedY, 9, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 9, 2, row,2));
                                 }
                                 if(selectedY<6 ){
-                                gridSquares[5][selectedX].move(identifier);
-                                changeRob(selectedX, 5);
+                                gridSquares[checkRob(selectedY, 5, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 5, 2, row,2));
                                 }
                             
                             }
                             else if(row==15){
                                 if(selectedY>10){
-                                gridSquares[15][selectedX].move(identifier);
-                                changeRob(selectedX, 15);
+                                gridSquares[checkRob(selectedY, 15, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 15, 2, row,2));
                                 }
                                 if(selectedY<11 & selectedY>3){
-                                gridSquares[10][selectedX].move(identifier);
-                                changeRob(selectedX, 10);
+                                gridSquares[checkRob(selectedY, 10, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 10, 2, row,2));
                                 }
                                 if(selectedY<4 ){
-                                gridSquares[3][selectedX].move(identifier);
-                                changeRob(selectedX, 3);
+                                gridSquares[checkRob(selectedY, 3, 2, row,2)][selectedX].move(identifier);
+                                changeRob(selectedX, checkRob(selectedY, 3, 2, row,2));
                                 }
                             
                             }
