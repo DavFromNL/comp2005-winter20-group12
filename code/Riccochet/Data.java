@@ -34,11 +34,10 @@ public class Data {
 
     private static Color[] normalPalette = { new Color(220, 202, 152), Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW,
             Color.ORANGE, Color.BLACK };
-    private static Color[] blueOrangePalette = { new Color(187, 147, 209), new Color(225, 159, 246),
-            new Color(161, 5, 88), new Color(49, 20, 50), new Color(163, 44, 196), new Color(120, 75, 134),
+    private static Color[] blueOrangePalette = { new Color(97, 76, 191), new Color(72, 69, 154),
+            new Color(53, 50, 131), new Color(37, 53, 105), new Color(30, 43, 88), new Color(120, 75, 134),
             Color.BLACK };
-    private static Color[] grayScalePalette = { Color.WHITE, new Color(90, 101, 113), new Color(138, 147, 157),
-            new Color(162, 169, 175), new Color(0, 0, 0), new Color(224, 227, 232), Color.BLACK };
+    private static Color[] grayScalePalette = { Color.WHITE, new Color(90, 101, 113), new Color(138, 147, 157), new Color(162, 169, 175), new Color(0, 0, 0), new Color(224, 227, 232), Color.BLACK };
 
     public void SetNumberOfPlayers(int value) {
 
