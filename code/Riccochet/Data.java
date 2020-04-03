@@ -39,9 +39,9 @@ public class Data {
             Color.BLACK };
     private static Color[] grayScalePalette = { Color.WHITE, new Color(90, 101, 113), new Color(138, 147, 157), new Color(162, 169, 175), new Color(0, 0, 0), new Color(224, 227, 232), Color.BLACK };
 
-    public void SetNumberOfPlayers(int value) {
+    public static void SetNumberOfPlayers(int value) {
 
-        this.NumberOfPlayers = value;
+        NumberOfPlayers = value;
 
     }
 
