@@ -15,10 +15,6 @@ Things That May Not Be Immediately Clear
   move the robot in that direction. Any selections that do not share either a row or column with 
   the robot will cause the robot to be deselected. 
 
-- Bids are entered after the time limit. This is because of the assumption that passing around a
-  computer during a timed session would be awkward and result in having to stop and start the
-  timer. This was discussed with Hatcher.
-
 - To change the number of players, click on the white space to type a number and click save. The
   number of players must be either one, two, three, or four else the game will return a warning.
   If you input fewer then four players, an AI will take control of the remaining.
@@ -30,7 +26,9 @@ Things That May Not Be Immediately Clear
 
 Buttons that do not do anything
 
-- TBD
+- Number of players is not implemented
+
+- Hint functionality is not implemented
 
 ----------------------------------------------------------------------------------------------------
 
@@ -38,6 +36,6 @@ Bonus tasks
 
 - The load and save functionality is implemented
 - Three different colour palettes are implemented (default, grey scale, midnight)
-- Computer AI 
+
 
 
