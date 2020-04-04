@@ -17,7 +17,7 @@ Things That May Not Be Immediately Clear
 
 - To change the number of players, click on the white space to type a number and click save. The
   number of players must be either one, two, three, or four else the game will return a warning.
-  If you input fewer then four players, an AI will take control of the remaining.
+  This will not actually change the number of players
 
 - While playing the game, the red x will close the program and the back button will close the 
   game
