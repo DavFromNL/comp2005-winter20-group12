@@ -30,12 +30,14 @@ Buttons that do not do anything
 
 - Hint functionality is not implemented
 
+- Because AI is not implemented AI difficulty does is not implemented 
+
 ----------------------------------------------------------------------------------------------------
 
 Bonus tasks
 
 - The load and save functionality is implemented
-- Three different colour palettes are implemented (default, grey scale, midnight)
+- Three different colour palettes are implemented (default, grey scale, blue/orange)
 
 
 
